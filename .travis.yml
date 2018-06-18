@@ -2,5 +2,5 @@ language: cpp
 os: osx
 before_script: brew bundle
 script:
-- glslangValidator --version
+- glslangValidator -v
 - ./validate.sh
