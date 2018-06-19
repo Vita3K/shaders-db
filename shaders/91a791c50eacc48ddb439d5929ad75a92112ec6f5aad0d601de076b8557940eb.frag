@@ -1,7 +1,7 @@
 // Fragment shader.
 #version 410
 
-in vec4 color;
+uniform vec4 color;
 
 out vec4 fragColor;
 
