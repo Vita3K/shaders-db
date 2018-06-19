@@ -1,6 +1,14 @@
 language: cpp
-os: osx
-before_script: brew install glslang
+matrix:
+  include:
+  - os: osx
+    before_script: brew install glslang
+    env: VALIDATOR="glslangValidator"
+  - os: linux
+    dist: trusty
+    sudo: false
+    before_script: curl https://cvs.khronos.org/svn/repos/ogl/trunk/ecosystem/public/sdk/tools/glslang/Install/Linux/glslangValidator --output glslangValidator
+    env: VALIDATOR="./glslangValidator"
 script:
-- glslangValidator -v
-- ./validate.sh
+- ${VALIDATOR} -v
+- find shaders -name "*.frag" -or -name "*.vert" | xargs ${VALIDATOR}
