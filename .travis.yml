@@ -7,7 +7,9 @@ matrix:
   - os: linux
     dist: trusty
     sudo: false
-    before_script: curl https://cvs.khronos.org/svn/repos/ogl/trunk/ecosystem/public/sdk/tools/glslang/Install/Linux/glslangValidator --output glslangValidator
+    before_script:
+    - curl https://cvs.khronos.org/svn/repos/ogl/trunk/ecosystem/public/sdk/tools/glslang/Install/Linux/glslangValidator --output glslangValidator
+    - chmod +x glslangValidator
     env: VALIDATOR="./glslangValidator"
 script:
 - ${VALIDATOR} -v
