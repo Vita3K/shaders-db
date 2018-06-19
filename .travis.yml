@@ -1,0 +1,6 @@
+language: cpp
+os: osx
+before_script: brew install glslang
+script:
+- glslangValidator -v
+- ./validate.sh
