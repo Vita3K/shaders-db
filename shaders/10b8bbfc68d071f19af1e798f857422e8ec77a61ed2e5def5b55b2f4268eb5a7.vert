@@ -1,4 +1,5 @@
 // Vertex shader.
+// Looks like a Game Maker shader, but I don't think Downwell uses it - PetMac
 #version 410
 
 in vec4 inputaPosition;
