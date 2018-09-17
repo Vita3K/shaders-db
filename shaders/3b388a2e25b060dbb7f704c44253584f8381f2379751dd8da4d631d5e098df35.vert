@@ -1,10 +1,10 @@
 // Vertex shader.
-
+// Downwell
 #version 410
 
-in vec4 inputaPosition;
-in vec4 inputaColour;
-in vec2 inputaTexCoord;
+in vec4 input_aPosition;
+in vec4 input_aColour;
+in vec2 input_aTexCoord;
 
 uniform mat4 gm_Matrices[5];
 
@@ -13,7 +13,7 @@ out vec2 vTexCoord;
 
 void main() 
 {
-    gl_Position = gm_Matrices[4] * inputaPosition;
-    vColor = inputaColour;
-    vTexCoord = inputaTexCoord;
+    gl_Position = gm_Matrices[4] * input_aPosition;
+    vColor = input_aColour;
+    vTexCoord = input_aTexCoord;
 }
