@@ -1,6 +1,16 @@
-language: cpp
-os: osx
-before_script: brew install glslang
+language: minimal
+
+env:
+  - GLSLANG_VERSION=7.10.2984
+
+os:
+  - linux
+  - osx
+
+before_script:
+  - curl -L -O https://github.com/KhronosGroup/glslang/releases/download/$GLSLANG_VERSION/glslang-master-$TRAVIS_OS_NAME-Release.zip
+  - unzip glslang-master-$TRAVIS_OS_NAME-Release.zip
+
 script:
-- glslangValidator -v
-- ./validate.sh
+  - ./bin/glslangValidator -v
+  - find shaders -name "*.frag" -or -name "*.vert" | xargs ./bin/glslangValidator
