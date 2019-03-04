@@ -1,4 +1,4 @@
-// Fragment shader.
+// Fragment shader - Flood it!.
 #version 410
 
 uniform float textureEnable;

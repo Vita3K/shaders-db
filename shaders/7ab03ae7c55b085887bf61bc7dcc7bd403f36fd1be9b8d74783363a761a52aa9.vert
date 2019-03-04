@@ -1,4 +1,4 @@
-// Vertex shader.
+// Vertex shader - Flood it!.
 #version 410
 
 in vec2 aPosition;
